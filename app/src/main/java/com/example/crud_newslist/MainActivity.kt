@@ -6,22 +6,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
-    private var noticias: MutableList<String> = mutableListOf()
+    private var noticias: MutableList<News> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        noticias.add("Prueba 1")
-        noticias.add("Prueba 2")
-        noticias.add("Prueba 3")
-        noticias.add("Prueba 4")
-        noticias.add("Prueba 5")
-
-
-        noticias.removeAt(0)
-
-        noticias[0] = "Elemento"
+        noticias.add(News("Prueba","https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen-930x487.jpg"))
 
         val adapter: NewsAdapter = NewsAdapter(noticias)
 

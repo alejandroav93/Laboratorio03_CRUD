@@ -3,10 +3,12 @@ package com.example.crud_newslist
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 
-class NewsAdapter(private var noticias: MutableList<String>): RecyclerView.Adapter<NewsAdapter.NewsHolder>() {
+class NewsAdapter(private var noticias: MutableList<News>): RecyclerView.Adapter<NewsAdapter.NewsHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsHolder {
@@ -15,7 +17,7 @@ class NewsAdapter(private var noticias: MutableList<String>): RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: NewsHolder, position: Int) {
-        val actual = this.noticias[position]
+        val actual: News = this.noticias[position]
         holder.bind(actual)
     }
 
@@ -23,9 +25,12 @@ class NewsAdapter(private var noticias: MutableList<String>): RecyclerView.Adapt
        return this.noticias.size
     }
     class NewsHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        fun bind(noticias: String) = with(itemView){
+        fun bind(noticias: News) = with(itemView){
             val txtTitle: TextView = findViewById(R.id.txtTitle)
-            txtTitle.text = noticias
+            val image: ImageView = findViewById(R.id.Image)
+            txtTitle.text = noticias.title
+
+            Picasso.get().load(noticias.image).into(image);
         }
     }
 }
