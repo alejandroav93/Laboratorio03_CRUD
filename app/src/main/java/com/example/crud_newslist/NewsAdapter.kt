@@ -21,31 +21,46 @@ class NewsAdapter(private val listener: NewsHolder.ClickListener) :
         return NewsHolder(view)
     }
 
+    private fun getItems() {
+        noticias = mutableListOf(
+            News(
+                "Pérdidas en el sector",
+
+                "http://gtpreviene.researchmobile.co:3000/uploads/2ij5og5sq62uidkz_maquila.jpg"
+            ),
+
+            News("Cacif presenta recurso", "http://gtpreviene.researchmobile.co:3000/uploads/co1dcqyh7toc3vkq_cien-billetes.jpg")
+        )
+
+        /*for (a in news) {
+        }*/
+    }
+
     override fun onBindViewHolder(holder: NewsHolder, position: Int) {
         holder.bind(noticias[position], listener)
     }
 
     override fun getItemCount(): Int {
-       return this.noticias.size
+       return noticias.size
     }
 
     public fun setItems(news: MutableList<News>) {
-        this.noticias = news
+        noticias = news
         notifyDataSetChanged()
     }
 
     fun addItem(aux: News) {
-        this.noticias.add(aux)
+        noticias.add(aux)
         notifyItemInserted(itemCount)
     }
 
     fun removeItem(position: Int) {
-        this.noticias.removeAt(position)
+        noticias.removeAt(position)
         notifyItemRemoved(position)
     }
 
     fun updateItem(position: Int, aux: News) {
-        this.noticias[position] = aux
+        noticias[position] = aux
         notifyItemChanged(position)
     }
     class NewsHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -53,8 +68,8 @@ class NewsAdapter(private val listener: NewsHolder.ClickListener) :
             val txtTitle: TextView = findViewById(R.id.listaNoticias)
             val image: ImageView = findViewById(R.id.Image)
             txtTitle.text = noticias.title
-
             Picasso.get().load(noticias.image).into(image);
+
             setOnClickListener {
                 listener.onItemClicked(adapterPosition)
             }
