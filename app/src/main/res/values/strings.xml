@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CRUD_NewsList</string>
+    <string name="news">news</string>
 </resources>

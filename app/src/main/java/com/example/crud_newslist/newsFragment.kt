@@ -1,6 +1,6 @@
-import android.os.Bundle
-import com.example.crud_newslist.NewsAdapter
+package com.example.crud_newslist
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,11 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.crud_newslist.R
 import com.example.crud_newslist.News
-import androidx.recyclerview.widget.RecyclerView
+import com.example.crud_newslist.NewsAdapter
 import kotlinx.android.synthetic.main.news_fragment.*
 
 
-abstract class newsFragment : Fragment(), NewsAdapter.NewsHolder.ClickListener {
+class newsFragment : Fragment(), NewsAdapter.NewsHolder.ClickListener {
     private lateinit var news: MutableList<News>
     private val adapter = NewsAdapter(this)
 

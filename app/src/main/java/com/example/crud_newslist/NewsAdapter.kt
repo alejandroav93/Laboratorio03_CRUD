@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.crud_newslist.R
 import com.example.crud_newslist.News
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.item_news.view.*
 
 
 class NewsAdapter(private val listener: NewsHolder.ClickListener) :

@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<navigation xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/navigation_map"
-        android:icon="@drawable/ic_map"
-        android:title="@string/map" />
 
-    <item
-        android:id="@+id/navigation_statistics"
-        android:icon="@drawable/ic_chart"
-        android:title="@string/statistics" />
 
     <item
         android:id="@+id/navigation_news"
         android:icon="@drawable/ic_news"
         android:title="@string/news" />
 
-    <item
-        android:id="@+id/navigation_emergencies"
-        android:icon="@drawable/ic_emergencies"
-        android:title="@string/emergencies" />
-</menu>
+</navigation>

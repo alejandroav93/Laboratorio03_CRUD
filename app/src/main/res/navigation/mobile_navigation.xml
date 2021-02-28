@@ -3,29 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_map">
+    >
 
-    <fragment
-        android:id="@+id/navigation_map"
-        android:name="com.rm.myapplication.ui.fragments.MapFragment"
-        android:label="@string/map"
-        tools:layout="@layout/fragment_map" />
 
-    <fragment
-        android:id="@+id/navigation_statistics"
-        android:name="com.rm.myapplication.ui.fragments.StatisticsFragment"
-        android:label="@string/statistics"
-        tools:layout="@layout/fragment_statistics" />
-
-    <fragment
-        android:id="@+id/navigation_emergencies"
-        android:name="com.rm.myapplication.ui.fragments.EmergenciesFragment"
-        android:label="@string/emergencies"
-        tools:layout="@layout/fragment_emergencies" />
 
     <fragment
         android:id="@+id/navigation_news"
-        android:name="com.rm.myapplication.ui.fragments.NewsFragment"
+        android:name="com.example.crud_newslist.newsFragment"
         android:label="@string/news"
-        tools:layout="@layout/fragment_news" />
+        tools:layout="@layout/news_fragment" />
 </navigation>
