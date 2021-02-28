@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.crud_newslist.R
 import com.example.crud_newslist.News
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.item_news.view.*
+
 
 
 class NewsAdapter(private val listener: NewsHolder.ClickListener) :
@@ -50,7 +50,7 @@ class NewsAdapter(private val listener: NewsHolder.ClickListener) :
     }
     class NewsHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun bind(noticias: News, listener: ClickListener) = with(itemView){
-            val txtTitle: TextView = findViewById(R.id.txtTitle)
+            val txtTitle: TextView = findViewById(R.id.listaNoticias)
             val image: ImageView = findViewById(R.id.Image)
             txtTitle.text = noticias.title
 
