@@ -1,27 +1,27 @@
 package com.example.crud_newslist
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+
 
 class MainActivity : AppCompatActivity() {
-    private var noticias: MutableList<News> = mutableListOf()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
-        noticias.add(News("Prueba","https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen-930x487.jpg"))
-
-        val adapter: NewsAdapter = NewsAdapter(noticias)
-
-        val listaNoticias: RecyclerView = findViewById(R.id.listaNoticias)
-            listaNoticias.layoutManager = LinearLayoutManager(this)
-            listaNoticias.adapter = adapter
-
-
-
-
+        val navController = findNavController(R.id.nav_host_fragment)
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_news
+            )
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
     }
 }
