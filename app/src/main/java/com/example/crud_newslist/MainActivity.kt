@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity(), NewsAdapter.NewsHolder.ClickListener {
         val btnAdd: Button = findViewById(R.id.btnAdd)
         btnAdd.setOnClickListener{
 
-            val aux = News("Prueba","https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen-930x487.jpg")
+            val aux = News("Paper Mario","\nNueva entrega","https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen-930x487.jpg")
             adapter.addItem(aux)
         }
 
@@ -34,12 +34,13 @@ class MainActivity : AppCompatActivity(), NewsAdapter.NewsHolder.ClickListener {
     private fun getItems() {
         noticias = mutableListOf(
             News(
-                "Juego de Super Mario",
+                "Paper Mario\n",
+                "\nNueva entrega",
 
                 "https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen-930x487.jpg\""
             ),
 
-            News("Juego de Super Mario",  "https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen-930x487.jpg\"")
+            News("Paper Mario\n",  "\nNueva entrega","https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen-930x487.jpg\"")
         )
 
         /*for (a in news) {
@@ -51,9 +52,10 @@ class MainActivity : AppCompatActivity(), NewsAdapter.NewsHolder.ClickListener {
 
     override fun onItemLongClicked(position: Int): Boolean {
         val aux = News(
-                "Actualizado",
+            "Actualizado",
+            "\nNueva Noticia",
 
-                "http://gtpreviene.researchmobile.co:3000/uploads/clh4lmsqs9xk5uah_juanito.jpeg"
+            "https://mk0gotogame87th4wha4.kinstacdn.com/wp-content/uploads/2020/07/Ed7UL3eU8AAe9jE.jpg"
         )
         adapter.updateItem(position, aux)
 
